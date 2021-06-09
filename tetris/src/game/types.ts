@@ -1,63 +1,65 @@
-export const SHAPES_NAME: string[] = ['Z', 'T', 'L', 'O', 'S', 'J', 'I'];
+import { Shapes } from '../ts/interfaces/Shapes';
+import { SHAPESCOLOR, SHAPESKIND } from '../ts/enums';
 
+export const SHAPES_NAME: string[] = ['Z', 'T', 'L', 'O', 'S', 'J', 'I'];
 export const BOARD_HEIGHT: number = 20;
 export const BOARD_WIDTH: number = 10;
 
-export const SHAPES = {
+export const SHAPES: Shapes = {
   Z: {
     shape: [
-      [0, 0, 0],
-      ['z', 'z', 0],
-      [0, 'z', 'z'],
+      [SHAPESKIND.E, SHAPESKIND.E, SHAPESKIND.E],
+      [SHAPESKIND.Z, SHAPESKIND.Z, SHAPESKIND.E],
+      [SHAPESKIND.E, SHAPESKIND.Z, SHAPESKIND.Z],
     ],
-    color: 'green',
+    color: SHAPESCOLOR.GREEN,
   },
   T: {
     shape: [
-      [0, 0, 0],
-      ['T', 'T', 'T'],
-      [0, 'T', 0],
+      [SHAPESKIND.E, SHAPESKIND.E, SHAPESKIND.E],
+      [SHAPESKIND.T, SHAPESKIND.T, SHAPESKIND.T],
+      [SHAPESKIND.E, SHAPESKIND.T, SHAPESKIND.E],
     ],
-    color: 'purple',
+    color: SHAPESCOLOR.PURPLE,
   },
   L: {
     shape: [
-      ['L', 0, 0],
-      ['L', 0, 0],
-      ['L', 'L', 0],
+      [SHAPESKIND.L, SHAPESKIND.E, SHAPESKIND.E],
+      [SHAPESKIND.L, SHAPESKIND.E, SHAPESKIND.E],
+      [SHAPESKIND.L, SHAPESKIND.L, SHAPESKIND.E],
     ],
-    color: 'orange',
+    color: SHAPESCOLOR.ORANGE,
   },
   O: {
     shape: [
-      ['O', 'O'],
-      ['O', 'O'],
+      [SHAPESKIND.O, SHAPESKIND.O],
+      [SHAPESKIND.O, SHAPESKIND.O],
     ],
-    color: 'yellow',
+    color: SHAPESCOLOR.YELLOW,
   },
   S: {
     shape: [
-      [0, 0, 0],
-      [0, 'S', 'S'],
-      ['S', 'S', 0],
+      [SHAPESKIND.E, SHAPESKIND.E, SHAPESKIND.E],
+      [SHAPESKIND.E, SHAPESKIND.S, SHAPESKIND.S],
+      [SHAPESKIND.S, SHAPESKIND.S, SHAPESKIND.E],
     ],
-    color: 'red',
+    color: SHAPESCOLOR.RED,
   },
   J: {
     shape: [
-      [0, 0, 'J'],
-      [0, 0, 'J'],
-      [0, 'J', 'J'],
+      [SHAPESKIND.E, SHAPESKIND.E, SHAPESKIND.J],
+      [SHAPESKIND.E, SHAPESKIND.E, SHAPESKIND.J],
+      [SHAPESKIND.E, SHAPESKIND.J, SHAPESKIND.J],
     ],
-    color: 'pink',
+    color: SHAPESCOLOR.PINK,
   },
   I: {
     shape: [
-      ['I', 0, 0, 0],
-      ['I', 0, 0, 0],
-      ['I', 0, 0, 0],
-      ['I', 0, 0, 0],
+      [SHAPESKIND.I, SHAPESKIND.E, SHAPESKIND.E, SHAPESKIND.E],
+      [SHAPESKIND.I, SHAPESKIND.E, SHAPESKIND.E, SHAPESKIND.E],
+      [SHAPESKIND.I, SHAPESKIND.E, SHAPESKIND.E, SHAPESKIND.E],
+      [SHAPESKIND.I, SHAPESKIND.E, SHAPESKIND.E, SHAPESKIND.E],
     ],
-    color: 'blue',
+    color: SHAPESCOLOR.PINK,
   },
 };
