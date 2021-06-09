@@ -1,7 +1,13 @@
 import React from 'react';
+import { SHAPESKIND } from '../../ts/enums';
 
-function Cell() {
-  return <div>hello this is a Cell</div>;
+interface OwnProps {
+  shapekind: SHAPESKIND;
 }
 
-export default Cell;
+type Props = OwnProps;
+
+export const Cell: React.FC<Props> = (props) => {
+  const { shapekind } = props;
+  return <div>[{shapekind}]</div>;
+};
