@@ -1,20 +1,18 @@
 import React from 'react';
-import { Game } from '../../ts/interfaces/Game';
-import { Board } from '../board';
-import { Dpad } from '../dpad';
+import { IGame } from '../../ts/interfaces/IGame';
+import { Keyboard } from '../keyboard';
+import { Display } from '../display'
+import { useSelector } from 'react-redux';
+import { RootStore } from '../../store';
+import { Grid } from '@material-ui/core';
 
-interface OwnProps {
-  tetris: Game;
-}
+export const Tetris: React.FC = (): JSX.Element => {
+  const { board, nextShape, shapesQueue } = useSelector<RootStore, IGame>(state => state.tetris)
 
-type Props = OwnProps;
-
-export const Tetris: React.FC<Props> = (props): JSX.Element => {
-  const { tetris } = props;
   return (
-    <>
-      <Board board={tetris.board} />
-      <Dpad />
-    </>
+    <Grid container direction='column' style={{ height: '100%', width: '75%', padding:'3rem', borderStyle:'double' }}>
+      <Display board={board} nextShape={nextShape} shapesQueue={shapesQueue} />
+      <Keyboard />
+    </Grid>
   );
 };

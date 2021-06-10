@@ -1,19 +1,19 @@
 import React from 'react';
-import { Cell } from './Cell';
+import { Cell } from './BoardCell';
 import { Grid } from '@material-ui/core';
-import { SHAPESKIND } from '../../ts/enums';
+import { EMPTYSLOTT, SHAPESKIND } from '../../ts/enums';
 
 interface OwnProps {
-  tetrisRow: SHAPESKIND[];
+  boardRow: (EMPTYSLOTT | SHAPESKIND)[];
 }
 
 type Props = OwnProps;
 
-export const TetrisRow: React.FC<Props> = (props): JSX.Element => {
-  const { tetrisRow } = props;
+export const BoardRow: React.FC<Props> = (props): JSX.Element => {
+  const { boardRow } = props;
 
   const renderCell = () => {
-    return tetrisRow.map((shapekind) => {
+    return boardRow.map((shapekind) => {
       return <Cell shapekind={shapekind} />;
     });
   };

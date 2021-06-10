@@ -1,10 +1,10 @@
 import React from 'react';
 import { Grid } from '@material-ui/core';
-import { TetrisRow } from './TetrisRow';
-import { SHAPESKIND } from '../../ts/enums';
+import { BoardRow } from './BoardRow';
+import { EMPTYSLOTT, SHAPESKIND } from '../../ts/enums';
 
 interface OwnProps {
-  board: SHAPESKIND[][];
+  board: (EMPTYSLOTT | SHAPESKIND)[][];
 }
 
 type Props = OwnProps;
@@ -14,12 +14,12 @@ export const Board: React.FC<Props> = (props): JSX.Element => {
 
   const renderTetrisRow = () => {
     return board.map((row) => {
-      return <TetrisRow tetrisRow={row} />;
+      return <BoardRow boardRow={row} />;
     });
   };
 
   return (
-    <Grid container direction='column'>
+    <Grid direction='column'>
       {renderTetrisRow()}
     </Grid>
   );

@@ -1,8 +1,8 @@
 import React from 'react';
-import { SHAPESKIND } from '../../ts/enums';
+import { EMPTYSLOTT, SHAPESKIND } from '../../ts/enums';
 
 interface OwnProps {
-  shapekind: SHAPESKIND;
+  shapekind: EMPTYSLOTT | SHAPESKIND;
 }
 
 type Props = OwnProps;
