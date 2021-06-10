@@ -1,15 +1,14 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import { useSelector } from 'react-redux';
-import { RooteStore } from './store';
-import { Game } from './ts/interfaces/Game';
 import { Tetris } from './components/tetris';
+import { Grid } from '@material-ui/core'
 
 function App() {
-  const tetris = useSelector<RooteStore, Game>((state) => state.tetris);
 
-  return <Tetris tetris={tetris} />;
+  return (
+    <Grid container direction='column' style={{ height: '100vh', width: '100vw' }} alignItems='center' alignContent='center'>
+      <Tetris />
+    </Grid>
+  )
 }
 
 export default App;
