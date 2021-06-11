@@ -3,6 +3,6 @@ import { SHAPESKIND } from "../enums/ShapeKind";
 import { SHAPESCOLOR } from "../enums/ShapesColor";
 
 export interface IShape {
-  shape: (SHAPESKIND | EMPTYSLOTT)[][];
+  tetromino: (SHAPESKIND | EMPTYSLOTT)[][];
   color: SHAPESCOLOR;
 }
