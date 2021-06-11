@@ -1,4 +1,6 @@
-import { SHAPES, SHAPES_NAME } from "../game/types";
+import { SHAPES, SHAPES_NAME } from "../game/data";
+import { EMPTYSLOTT, SHAPESKIND } from "../ts/enums";
+import { ICurrentShape } from "../ts/interfaces/ICurrentShape";
 import { IShape } from "../ts/interfaces/IShape";
 
 export class Shapes {
@@ -20,5 +22,22 @@ export class Shapes {
     }
 
     return shapesQueue;
+  };
+
+  static getColor = (shapekind: SHAPESKIND | EMPTYSLOTT): string => {
+    if (shapekind === EMPTYSLOTT.E) {
+      return "empty";
+    }
+    return SHAPES[shapekind].color;
+  };
+
+  static genCurrentShape = (): ICurrentShape => {
+    const randomShape = Shapes.getRandomShape();
+
+    return {
+      shape: randomShape,
+      position: { x: 0, y: 0 },
+      collided: false,
+    };
   };
 }
