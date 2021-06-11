@@ -10,28 +10,26 @@ export const SHAPES_NAME: SHAPESKIND[] = [
   SHAPESKIND.J,
   SHAPESKIND.I,
 ];
-export const BOARD_HEIGHT: number = 20;
-export const BOARD_WIDTH: number = 10;
 
 export const SHAPES: IShapes = {
   Z: {
-    shape: [
-      [EMPTYSLOTT.E, EMPTYSLOTT.E, EMPTYSLOTT.E],
+    tetromino: [
       [SHAPESKIND.Z, SHAPESKIND.Z, EMPTYSLOTT.E],
       [EMPTYSLOTT.E, SHAPESKIND.Z, SHAPESKIND.Z],
+      [EMPTYSLOTT.E, EMPTYSLOTT.E, EMPTYSLOTT.E],
     ],
     color: SHAPESCOLOR.GREEN,
   },
   T: {
-    shape: [
-      [EMPTYSLOTT.E, EMPTYSLOTT.E, EMPTYSLOTT.E],
+    tetromino: [
       [SHAPESKIND.T, SHAPESKIND.T, SHAPESKIND.T],
       [EMPTYSLOTT.E, SHAPESKIND.T, EMPTYSLOTT.E],
+      [EMPTYSLOTT.E, EMPTYSLOTT.E, EMPTYSLOTT.E],
     ],
     color: SHAPESCOLOR.PURPLE,
   },
   L: {
-    shape: [
+    tetromino: [
       [SHAPESKIND.L, EMPTYSLOTT.E, EMPTYSLOTT.E],
       [SHAPESKIND.L, EMPTYSLOTT.E, EMPTYSLOTT.E],
       [SHAPESKIND.L, SHAPESKIND.L, EMPTYSLOTT.E],
@@ -39,22 +37,22 @@ export const SHAPES: IShapes = {
     color: SHAPESCOLOR.ORANGE,
   },
   O: {
-    shape: [
+    tetromino: [
       [SHAPESKIND.O, SHAPESKIND.O],
       [SHAPESKIND.O, SHAPESKIND.O],
     ],
     color: SHAPESCOLOR.YELLOW,
   },
   S: {
-    shape: [
-      [EMPTYSLOTT.E, EMPTYSLOTT.E, EMPTYSLOTT.E],
+    tetromino: [
       [EMPTYSLOTT.E, SHAPESKIND.S, SHAPESKIND.S],
       [SHAPESKIND.S, SHAPESKIND.S, EMPTYSLOTT.E],
+      [EMPTYSLOTT.E, EMPTYSLOTT.E, EMPTYSLOTT.E],
     ],
     color: SHAPESCOLOR.RED,
   },
   J: {
-    shape: [
+    tetromino: [
       [EMPTYSLOTT.E, EMPTYSLOTT.E, SHAPESKIND.J],
       [EMPTYSLOTT.E, EMPTYSLOTT.E, SHAPESKIND.J],
       [EMPTYSLOTT.E, SHAPESKIND.J, SHAPESKIND.J],
@@ -62,7 +60,7 @@ export const SHAPES: IShapes = {
     color: SHAPESCOLOR.PINK,
   },
   I: {
-    shape: [
+    tetromino: [
       [SHAPESKIND.I, EMPTYSLOTT.E, EMPTYSLOTT.E, EMPTYSLOTT.E],
       [SHAPESKIND.I, EMPTYSLOTT.E, EMPTYSLOTT.E, EMPTYSLOTT.E],
       [SHAPESKIND.I, EMPTYSLOTT.E, EMPTYSLOTT.E, EMPTYSLOTT.E],
